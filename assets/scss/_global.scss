@@ -1,0 +1,62 @@
+body {
+  color: $secondary;
+  font-family: $font_family_quicksand;
+  font-size: 1rem;
+  font-weight: 500;
+}
+* {
+  letter-spacing: 0.3px;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.hover-transition {
+  transition: all 0.3s ease;
+
+  &:hover {
+    transition: all 0.3s ease;
+  }
+}
+
+.box-shadow {
+  box-shadow: 0 1px 2px rgba(3, 54, 63, 0.4), 0 -1px 2px rgba(3, 54, 63, 0.04);
+}
+
+.shadow-primary-is-hover {
+  box-shadow: 0 1px 2px rgba(3, 54, 63, 0.4), 0 -1px 2px rgba(3, 54, 63, 0.04);
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(3, 54, 63, 0.16), 0 2px 4px rgba(3, 54, 63, 0.08),
+      0 1px 2px rgba(3, 54, 63, 0.16), 0 -1px 2px rgba(3, 54, 63, 0.04);
+  }
+}
+
+.hover-color-primary {
+    @extend .hover-transition;
+    &:hover {
+      @extend .hover-transition;
+      color: $primary;
+    }
+}
+
+.text-lv1 {
+  @apply font-league text-center md:text-[40px] text-[34px] uppercase relative before:absolute before:bg-[url('./assets/images/title_base.png')] before:bg-no-repeat before:bg-cover before:md:h-[27px] before:w-[120px] before:md:w-[160px] before:h-[21px] before:top-[-3px] before:left-[50%] before:translate-x-[-50%] before:translate-y-[-50%];
+}
+
+.text-lv2 {
+  @apply font-bold md:text-[24px] text-[18px];
+}
+
+.text-lv3 {
+  @extend .hover-color-primary;
+  @apply font-bold md:text-[20px] text-[16px] cursor-pointer;
+}
+
+.btn-1 {
+  @apply bg-white my-6 flex whitespace-nowrap items-center h-[44px] md:h-[50px] px-7 font-bold rounded-[30px] cursor-pointer hover:text-white hover-transition hover:bg-primary text-secondary text-[18px] border-[rgba(0,0,0,0.1)] border-solid border-[1px];
+
+  &.active {
+    @apply bg-primary text-white;
+  }
+}

@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'swiper/scss';
+
+@import '../fonts/Quicksand/stylesheet.css';
+@import '../fonts/LeagueGothic/stylesheet.css';
+
+@import './variables.scss';
+@import './global.scss';
+
+@import './header.scss';
+@import './footer.scss';
+@import './home.scss';

@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'League Gothic Condensed';
+    src: url('/assets/fonts/LeagueGothic/LeagueGothicCondensed-Regular.eot');
+    src: url('/assets/fonts/LeagueGothic/LeagueGothicCondensed-Regular.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/LeagueGothic/LeagueGothicCondensed-Regular.woff2') format('woff2'),
+        url('/assets/fonts/LeagueGothic/LeagueGothicCondensed-Regular.woff') format('woff'),
+        url('/assets/fonts/LeagueGothic/LeagueGothicCondensed-Regular.ttf') format('truetype'),
+        url('/assets/fonts/LeagueGothic/LeagueGothicCondensed-Regular.svg#LeagueGothicCondensed-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'League Gothic SemiCondensed';
+    src: url('/assets/fonts/LeagueGothic/LeagueGothicSemiCondensed-Regular.eot');
+    src: url('/assets/fonts/LeagueGothic/LeagueGothicSemiCondensed-Regular.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/LeagueGothic/LeagueGothicSemiCondensed-Regular.woff2') format('woff2'),
+        url('/assets/fonts/LeagueGothic/LeagueGothicSemiCondensed-Regular.woff') format('woff'),
+        url('/assets/fonts/LeagueGothic/LeagueGothicSemiCondensed-Regular.ttf') format('truetype'),
+        url('/assets/fonts/LeagueGothic/LeagueGothicSemiCondensed-Regular.svg#LeagueGothicSemiCondensed-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'League Gothic';
+    src: url('/assets/fonts/LeagueGothic/LeagueGothic-Regular.eot');
+    src: url('/assets/fonts/LeagueGothic/LeagueGothic-Regular.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/LeagueGothic/LeagueGothic-Regular.woff2') format('woff2'),
+        url('/assets/fonts/LeagueGothic/LeagueGothic-Regular.woff') format('woff'),
+        url('/assets/fonts/LeagueGothic/LeagueGothic-Regular.ttf') format('truetype'),
+        url('/assets/fonts/LeagueGothic/LeagueGothic-Regular.svg#LeagueGothic-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
