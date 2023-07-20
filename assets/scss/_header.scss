@@ -6,11 +6,16 @@
     pointer-events: none;
     z-index: 10;
     .dropdown-menu__item {
-      padding: 8px 4px;
       border-bottom: 1px solid #e5e6ec;
 
-      &:last-child {
-        border-bottom: none;
+        &:last-child {
+          border-bottom: none;
+        }
+      &__link {
+        cursor: pointer;
+        display: block;
+        padding: 8px 4px;
+        
       }
     }
   }
@@ -35,7 +40,8 @@
   }
 }
 
-.menu-mobile-item, .menu-mobile-item-product {
+.menu-mobile-item,
+.menu-mobile-item-product {
   padding: 12px;
   display: flex;
   align-items: center;

@@ -23,5 +23,10 @@ export default defineNuxtConfig({
     }
   },
   css: ['@/assets/scss/app.scss'],
+  runtimeConfig: {
+    app: {
+      apiWebUrl: process.env.API_WEB_URL, appUrl: process.env.APP_URL
+    }
+  },
   devtools: { enabled: true }
 })

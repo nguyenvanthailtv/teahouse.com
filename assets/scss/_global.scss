@@ -60,3 +60,50 @@ html {
     @apply bg-primary text-white;
   }
 }
+
+.product-item{
+  &:hover .add-cart {
+  transform: translateY(0);
+    transition: all 0.3s ease;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  & > li {
+    cursor: pointer;
+    width: 44px;
+    margin: 0 2px;
+    height: 44px;
+    border-radius: 4px;
+    background-color: #f6f6f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 18px;
+
+    &:hover {
+      @extend .hover-transition;
+      background-color: $primary;
+      color: white;
+      & > svg {
+        fill: white;
+      }
+    }
+
+    &.disabled {
+      visibility: hidden;
+    }
+
+    &.active {
+      @extend .hover-transition;
+      cursor: default;
+      background-color: $primary;
+      color: white;
+    }
+  }
+}
