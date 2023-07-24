@@ -13,7 +13,13 @@ export default defineNuxtConfig({
       script: [
         {
           type: 'text/javascript',
-          src: 'assets/js/app.js'
+          src: './assets/js/app.js'
+        }
+      ],
+      link: [
+        {
+          rel: 'icon',
+          href: './assets/images/favicon.ico'
         }
       ]
     }
