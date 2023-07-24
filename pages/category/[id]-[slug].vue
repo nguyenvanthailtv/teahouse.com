@@ -8,12 +8,16 @@ const category = ref<Category>()
 const fetchCategory = async () => {
   category.value = await request().get(`/categories/${route.params.id}`)
 }
-const pageTitle = category.value ? category.value.name + ' - Tea House' : 'Tea House'
-await fetchCategory()
-useSeoMeta({
-  title: pageTitle,
-  ogTitle: pageTitle
+watchEffect(() => {
+  const pageTitle = category.value ? category.value.name + ' - Tea House' : 'Tea House'
+  useSeoMeta({
+    title: pageTitle,
+    ogTitle: pageTitle
+  })
 })
+
+await fetchCategory()
+
 const products = ref<Product[]>()
 const pagination = ref({
   page: 1,

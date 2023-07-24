@@ -96,7 +96,7 @@ const search = () => {
             <!--              </div>-->
             <!--            </li>-->
             <li class="px-2 relative cart hover-transition cursor-default">
-              <nuxt-link to="#" class="hover-transition relative cart__title">
+              <nuxt-link to="/cart/" class="hover-transition relative cart__title">
                 <svg
                   class="feather feather-shopping-cart inline mr-2"
                   fill="none"
@@ -218,7 +218,7 @@ const search = () => {
         <nuxt-link to="/">
           <img :src="logoMobile" alt="">
         </nuxt-link>
-        <nuxt-link to="#" class="hover-transition relative text-white">
+        <nuxt-link to="/cart/" class="hover-transition relative text-white">
           <svg
             class="feather feather-shopping-cart inline mr-2"
             fill="none"
@@ -237,7 +237,7 @@ const search = () => {
           </svg>
           <span class="hidden sm:inline">Giỏ hàng</span>
           <div class="absolute bg-white left-4 bottom-[-10px] px-1 rounded-[50%] text-[12px] text-primary">
-            0
+            {{ cartStore.totatQuantity }}
           </div>
         </nuxt-link>
       </div>

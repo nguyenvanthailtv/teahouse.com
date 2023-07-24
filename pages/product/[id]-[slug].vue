@@ -1,6 +1,6 @@
 <script setup lang="ts"></script>
 <template>
   <div>
-    product iêaseasda
+    Phần sản phẩm đang được phát triển
   </div>
 </template>

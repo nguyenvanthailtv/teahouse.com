@@ -26,7 +26,7 @@ const removeProduct = (id: number) => {
           <h6 class="text-[14px]">
             {{ item.product.name }}
           </h6>
-          <span class="text-[14px] font-bold text-primary my-2 block">{{ item.product.price_promotional ? item.product.price_promotional : item.product.price }}&#8363;</span>
+          <span class="text-[14px] font-bold text-primary my-2 block">{{ item.product.price_promotional ? item.product.price_promotional.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') : item.product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') }}&#8363;</span>
           <div class="flex w-[80px] text-[14px]">
             <span class="flex-1 border-[1px] py-1 border-[#e1e1e1] border-r-[0] text-center">{{ item.quantity }}</span>
             <div class="flex flex-col">
@@ -76,7 +76,7 @@ const removeProduct = (id: number) => {
       Tổng cộng: <span class="font-bold text-primary text-[18px]">{{ cartStore.totalPrice }}&#8363;</span>
     </div>
     <div class="p-6">
-      <nuxt-link to="#" class="py-[10px] text-center font-bold text-white bg-primary hover:bg-secondary hover-transition block rounded-[20px]">
+      <nuxt-link to="/cart/" class="py-[10px] text-center font-bold text-white bg-primary hover:bg-secondary hover-transition block rounded-[20px]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -92,7 +92,7 @@ const removeProduct = (id: number) => {
       </nuxt-link>
     </div>
   </div>
-  <div v-else>
-    giỏ hàng
+  <div v-else class="p-5">
+    Không có sản phẩm nào.
   </div>
 </template>

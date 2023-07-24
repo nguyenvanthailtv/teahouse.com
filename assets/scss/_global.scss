@@ -70,6 +70,14 @@ html {
   }
 }
 
+.btn-2 {
+  @apply bg-primary my-6 flex whitespace-nowrap items-center h-[44px] md:h-[50px] px-7 font-bold rounded-[30px] cursor-pointer hover:text-primary hover-transition hover:bg-white text-white text-[18px] border-primary border-solid border-[1px];
+
+  &.active {
+    @apply bg-white text-primary;
+  }
+}
+
 .product-item{
   &:hover .add-cart {
   transform: translateY(0);
