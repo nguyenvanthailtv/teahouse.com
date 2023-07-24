@@ -4,6 +4,11 @@ import { ref, watch } from 'vue'
 import request from '@/utils/request'
 import ProductItem from '@/components/ProductItem.vue'
 import slider1 from '~/assets/images/slider_1.png'
+import pic1 from '~/assets/images/picture_1.png'
+import pic2 from '~/assets/images/picture_2.png'
+import pic3 from '~/assets/images/picture_3.png'
+import pic4 from '~/assets/images/picture_4.png'
+import pic5 from '~/assets/images/picture_5.png'
 register()
 useSeoMeta({
   title: 'Tea House',
@@ -19,59 +24,25 @@ const slides = [
 const listPictures = [
   {
     id: 1,
-    img: 'assets/images/picture_1.png'
+    img: pic1
   },
   {
     id: 2,
-    img: 'assets/images/picture_2.png'
+    img: pic2
   },
   {
     id: 3,
-    img: 'assets/images/picture_3.png'
+    img: pic3
   },
   {
     id: 4,
-    img: 'assets/images/picture_4.png'
+    img: pic4
   },
   {
     id: 5,
-    img: 'assets/images/picture_5.png'
+    img: pic5
   }
 ]
-
-// const listNews = [
-//   {
-//     id: 1,
-//     name: 'Nhâm nhi cà phê bao lâu nhưng bạn tận mắt nhìn kỹ xem hạt cà phê chưa?',
-//     content: 'Cốc cafe vị đăng đắng, lẫn thêm chút ngọt bùi của sữa đặc sao mà gây nghiện đến thế. Không chỉ cuốn hút ở mùi vị, một cốc cafe sáng còn giúp ngày mới tràn đầy năng lượng với người trẻ, sẵn sàng cho...',
-//     img: 'http://picsum.photos/1024/600?random=1'
-//   },
-//   {
-//     id: 2,
-//     name: 'Uống 1-4 tách cà phê mỗi ngày giúp bệnh nhân ung thư kéo dài sự sống',
-//     content: 'Uống từ một đến bốn tách cà phê mỗi ngày có thể giúp bệnh nhân ung thư đại trực tràng giai đoạn cuối sống lâu hơn và làm chậm sự tiến triển của bệnh. Phát hiện này được các nhà khoa học rút ra từ m...',
-//     img: 'http://picsum.photos/1024/600?random=2'
-//   },
-//   {
-//     id: 3,
-//     name: 'Dùng cốc giấy đựng cà phê nóng, thứ bạn uống đầy ắp những thứ đáng sợ này',
-//     content: 'Đối với nhiều người, một ngày mới chỉ có thể khởi đầu tốt đẹp bằng một tách cà phê nóng. Nhờ cafein, bộ não dường như không thể nhận được tín hiệu "mệt mỏi", từ đó tạo cho con người ta một nguồn nă...',
-//     img: 'http://picsum.photos/1024/600?random=3'
-//   },
-//   {
-//     id: 4,
-//     name: 'Uống trà có mất ngủ không?',
-//     content: 'Uống trà có mất ngủ không? Đây có lẽ là câu hỏi kinh điển, nhất là với những người mới tập uống trà. Có những người chỉ nhấp một chén trà thôi cũng có thể khiến họ trằn trọc khó ngủ cả đêm. Nhưng c...',
-//     img: 'http://picsum.photos/1024/600?random=4'
-//   },
-//   {
-//     id: 5,
-//     name: 'Cà phê hay thể dục: Lựa chọn nào giúp đánh bại cơn buồn ngủ tốt hơn?',
-//     content: 'Có hai trường phái để đánh bại những cơn buồn ngủ vào sáng sớm và đầu giờ chiều, hai thời điểm trong ngày mà bạn cần lấy lại sự tỉnh táo của mình nhất. Một số người sẽ chọn giải pháp nhanh chóng vớ...',
-//     img: 'http://picsum.photos/1024/600?random=5'
-//   }
-// ]
-
 const categories = ref()
 const listProducts = ref()
 const menuActive = ref(0)
@@ -228,64 +199,6 @@ await fetchProducts(menuActive.value)
         </li>
       </ul>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-5 lg:gap-7">
-        <!-- <div v-for="item in listProducts" :key="item.id" class="home_product-item cursor-default">
-          <div class="relative w-full overflow-hidden pb-[100%] border-[1px] border-[rgba(0,0,0,0.2)]">
-            <nuxt-link
-              :to="{
-                name: 'product-id-slug',
-                params: {
-                  id: item.id,
-                  slug: item.slug,
-                }
-              }"
-              class="w-full h-full absolute"
-            >
-              <img
-                :src="item.img"
-                :alt="item.name"
-                class="w-full h-full hover-transition hover:scale-[1.1] cursor-pointer object-cover z-0"
-              >
-            </nuxt-link>
-            <p
-              class="add-cart absolute bottom-0 translate-y-[100%] cursor-pointer hover:bg-secondary w-full text-center py-2 font-bold text-white bg-primary"
-            >
-              Thêm vào giỏ hàng
-            </p>
-          </div>
-          <div class="flex flex-col items-center py-4">
-            <nuxt-link
-              :to="{
-                name: 'product-id-slug',
-                params: {
-                  id: item.id,
-                  slug:item.slug
-                }
-              }"
-              class="font-bold text-lv3"
-            >
-              {{ item.name }}
-            </nuxt-link>
-            <div v-if="item.price_promotional" class="flex items-center text-[18px]">
-              Giá:
-              <strong>
-                {{ item.price_promotional.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') }}
-                &#8363;
-              </strong>
-
-              <span class="text-[14px] ml-2 line-through">
-                {{ item.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') }}
-                &#8363;
-              </span>
-            </div>
-            <div v-else>
-              Giá:
-              <strong class="text-[18px]">
-                {{ item.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') }}
-                &#8363;
-              </strong>
-            </div>
-          </div>
-        </div> -->
         <product-item v-for="item in listProducts" :key="item.id" :product="item" />
       </div>
     </section>
@@ -311,45 +224,6 @@ await fetchProducts(menuActive.value)
         </div>
       </div>
     </section>
-    <!--Tin tức nổi bật-->
-    <!-- <section class="pt-[50px] md:pt-[90px] container mx-auto">
-      <h1 class="text-lv1">
-        Tin tức nổi bật
-      </h1>
-      <swiper
-        class="mt-10 mb-16"
-        :breakpoints="{
-          0: {
-            slidesPerView: 1,
-            spaceBetween: 10
-          },
-          576: {
-            slidesPerView: 2,
-            spaceBetween: 20
-          },
-          768: {
-            slidesPerView: 3,
-            spaceBetween: 40
-          }
-        }"
-      >
-        <swiper-slide v-for="item in listNews" :key="item.id">
-          <nuxt-link to="#" class="block w-full overflow-hidden relative pb-[100%]">
-            <img
-              :src="item.img"
-              :alt="item.name"
-              class="absolute w-full h-full object-cover cursor-pointer hover-transition hover:scale-[1.1]"
-            >
-          </nuxt-link>
-          <nuxt-link to="#" class="text-lv3 md:!text-[18px] line-clamp-2 my-2">
-            {{ item.name }}
-          </nuxt-link>
-          <p class="line-clamp-4">
-            {{ item.content }}
-          </p>
-        </swiper-slide>
-      </swiper>
-    </section> -->
 
     <!--List picture-->
     <section class="md:mt-[90px] mt-[50px]">
