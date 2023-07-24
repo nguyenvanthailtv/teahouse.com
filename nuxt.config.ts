@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+const path = require('path')
 export default defineNuxtConfig({
   modules: ['nuxt-swiper', ['@pinia/nuxt', {
     autoImports: ['defineStore', 'acceptHMRUpdate']
@@ -13,17 +14,13 @@ export default defineNuxtConfig({
       script: [
         {
           type: 'text/javascript',
-          src: 'assets/js/app.js'
-        },
-        {
-          type: 'text/javascript',
-          src: '~/assets/js/app.js'
+          src: path.resolve(__dirname, 'assets/js/app.js')
         }
       ],
       link: [
         {
           rel: 'icon',
-          href: '~/assets/images/favicon.ico'
+          href: 'assets/images/favicon.ico'
         }
       ]
     }
