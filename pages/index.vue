@@ -3,6 +3,7 @@ import { register } from 'swiper/element/bundle'
 import { ref, watch } from 'vue'
 import request from '@/utils/request'
 import ProductItem from '@/components/ProductItem.vue'
+import slider1 from '~/assets/images/slider_1.png'
 register()
 useSeoMeta({
   title: 'Tea House',
@@ -11,7 +12,7 @@ useSeoMeta({
 const slides = [
   {
     id: 1,
-    img: 'assets/images/slider_1.png'
+    img: slider1
   }
 ]
 
@@ -26,7 +27,7 @@ const listPictures = [
   },
   {
     id: 3,
-    img: '/assets/images/picture_3.png'
+    img: 'assets/images/picture_3.png'
   },
   {
     id: 4,
