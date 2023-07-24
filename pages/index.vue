@@ -11,18 +11,18 @@ useSeoMeta({
 const slides = [
   {
     id: 1,
-    img: '/assets/images/slider_1.png'
+    img: 'assets/images/slider_1.png'
   }
 ]
 
 const listPictures = [
   {
     id: 1,
-    img: '/assets/images/picture_1.png'
+    img: 'assets/images/picture_1.png'
   },
   {
     id: 2,
-    img: '/assets/images/picture_2.png'
+    img: 'assets/images/picture_2.png'
   },
   {
     id: 3,
@@ -30,11 +30,11 @@ const listPictures = [
   },
   {
     id: 4,
-    img: '/assets/images/picture_4.png'
+    img: 'assets/images/picture_4.png'
   },
   {
     id: 5,
-    img: '/assets/images/picture_5.png'
+    img: 'assets/images/picture_5.png'
   }
 ]
 
