@@ -3,7 +3,7 @@ export interface Product {
     name: string
     slug: string
     price: number
-    price_promotinal: number
+    price_promotional: number
     img: string
     category_id: number
 }
@@ -13,4 +13,10 @@ export interface Category {
     name: string
     slug: string
     img: string
+}
+
+export interface Cart {
+    product: Product
+    quantity: number
+    total: number
 }

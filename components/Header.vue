@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import Cart from '@/components/Cart.vue'
 import request from '@/utils/request'
 import logo from '@/assets/images/logo.png'
 import logoMobile from '@/assets/images/logo_mobi.png'
+const cartStore = useCartStore()
 const router = useRouter()
 const categories = ref()
 const fetchCategories = async () => {
@@ -113,18 +115,14 @@ const search = () => {
                 </svg>
                 <span class="hidden lg:inline">Giỏ hàng</span>
                 <div class="absolute bg-white left-4 bottom-[-10px] px-1 rounded-[50%] text-[12px] text-primary">
-                  0
+                  {{ cartStore.totatQuantity }}
                 </div>
               </nuxt-link>
 
               <div
-                class="dropdown-menu absolute left-[-200%] hover-transition right-0 box-shadow translate-y-[100%] opacity-0 bg-white text-secondary px-3 py-2 rounded-[6px]"
+                class="dropdown-menu absolute left-[-200%] hover-transition right-0 box-shadow translate-y-[100%] opacity-0 bg-white text-secondary rounded-[6px]"
               >
-                <ul>
-                  <li class="py-1">
-                    Không có sản phẩm nào
-                  </li>
-                </ul>
+                <cart />
               </div>
             </li>
           </ul>
@@ -190,7 +188,7 @@ const search = () => {
             <nuxt-link to="#" class="hover-color-primary font-bold px-1 py-2 mx-3">
               Thực đơn
             </nuxt-link>
-            <nuxt-link to="#" class="hover-color-primary font-bold px-1 py-2 mx-3">
+            <nuxt-link to="/contact/" class="hover-color-primary font-bold px-1 py-2 mx-3">
               Liên hệ
             </nuxt-link>
           </div>

@@ -7,6 +7,15 @@ body {
 * {
   letter-spacing: 0.3px;
 }
+
+*::-webkit-scrollbar {
+  width: 4px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $primary;
+  border-radius: 14px;
+}
 html {
   scroll-behavior: smooth;
 }

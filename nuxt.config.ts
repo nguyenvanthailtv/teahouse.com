@@ -1,6 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['nuxt-swiper'],
+  modules: ['nuxt-swiper', ['@pinia/nuxt', {
+    autoImports: ['defineStore', 'acceptHMRUpdate']
+  }]],
   app: {
     head: {
       charset: 'utf-8',
@@ -21,6 +23,9 @@ export default defineNuxtConfig({
       tailwindcss: {},
       autoprefixer: {}
     }
+  },
+  imports: {
+    dirs: ['stores']
   },
   css: ['@/assets/scss/app.scss'],
   runtimeConfig: {

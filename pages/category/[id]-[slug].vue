@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
-import CardProduct from '@/components/CardProduct.vue'
+import ProductItem from '@/components/ProductItem.vue'
 import { Product, Category } from '~/types'
 import request from '@/utils/request'
 const route = useRoute()
@@ -23,7 +23,7 @@ const pagination = ref({
 
 const getData = async () => {
   await fetch(`https://q6kks8-8080.csb.app/products?category_id=${route.params.id}&_page=${pagination.value.page}&_limit=${pagination.value.limit}`).then((res) => {
-    pagination.value.totalPage = Math.ceil(parseInt(res.headers.get('x-total-count')) / 12)
+    pagination.value.totalPage = Math.ceil(res.headers.get('x-total-count') / 12)
     return res.json()
   }).then((response) => {
     products.value = response
@@ -54,7 +54,7 @@ const prevPage = async () => {
       <span class="text-secondary"><nuxt-link to="/" class="cursor-pointer hover-color-primary">Trang chủ</nuxt-link> / </span> {{ category?.name }}
     </p>
     <div class="lg:mt-16 mt-10 mb-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-5 lg:gap-7">
-      <card-product v-for="product in products" :key="product.id" :product="product" />
+      <product-item v-for="product in products" :key="product.id" :product="product" />
     </div>
     <ul v-if="pagination.totalPage > 1" class="pagination mb-10">
       <li

@@ -1,11 +1,17 @@
 <script setup lang="ts">
+import { PropType } from 'vue'
+import { Product } from 'types'
+const cartStore = useCartStore()
 const props = defineProps({
   product: {
-    type: Object,
+    type: Object as PropType<Product>,
     required: true
   }
 })
 const product = computed(() => props.product)
+const addProduct = (product: Product) => {
+  cartStore.addProduct(product)
+}
 </script>
 <template>
   <div class="cursor-default product-item">
@@ -28,6 +34,7 @@ const product = computed(() => props.product)
       </nuxt-link>
       <p
         class="add-cart absolute bottom-0 translate-y-[100%] cursor-pointer hover:bg-secondary w-full text-center py-2 font-bold text-white bg-primary"
+        @click="addProduct(product)"
       >
         Thêm vào giỏ hàng
       </p>

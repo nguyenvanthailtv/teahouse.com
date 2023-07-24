@@ -64,3 +64,13 @@
     }
   }
 }
+
+.cart-product {
+  &__item {
+    border-top: 1px solid rgba(0,0,0,0.2);
+
+    &:nth-child(1) {
+      border:none
+    }
+  }
+}

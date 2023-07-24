@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
-import CardProduct from '@/components/CardProduct.vue'
+import ProductItem from '@/components/ProductItem.vue'
 import { Product } from '~/types'
 useSeoMeta({
   title: 'Tất cả sản phẩm',
@@ -45,7 +45,7 @@ const prevPage = async () => {
       <span class="text-secondary"><nuxt-link to="/" class="cursor-pointer hover-color-primary">Trang chủ</nuxt-link> / </span> Tất cả sản phẩm
     </p>
     <div class="lg:mt-16 mt-10 mb-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-5 lg:gap-7">
-      <card-product v-for="product in products" :key="product.id" :product="product" />
+      <product-item v-for="product in products" :key="product.id" :product="product" />
     </div>
     <ul class="pagination mb-10">
       <li

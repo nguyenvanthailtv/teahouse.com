@@ -1,13 +1,10 @@
-import { SearchParameters } from 'ofetch'
 export default function () {
   const apiConfig = useRuntimeConfig().app
   const requestConfig = {
     baseURL: apiConfig.apiWebUrl,
     method: 'GET' as const,
     headers: {
-      Accept: 'application/json',
-      'Cache-Control': 'no-cache',
-      Authorization: ''
+      'Content-Type': 'application/json'
     }
   }
   return {

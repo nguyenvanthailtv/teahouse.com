@@ -2,7 +2,7 @@
 import { register } from 'swiper/element/bundle'
 import { ref, watch } from 'vue'
 import request from '@/utils/request'
-import CardProduct from '@/components/CardProduct.vue'
+import ProductItem from '@/components/ProductItem.vue'
 register()
 useSeoMeta({
   title: 'Tea House',
@@ -285,7 +285,7 @@ await fetchProducts(menuActive.value)
             </div>
           </div>
         </div> -->
-        <card-product v-for="item in listProducts" :key="item.id" :product="item" />
+        <product-item v-for="item in listProducts" :key="item.id" :product="item" />
       </div>
     </section>
 
