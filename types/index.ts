@@ -4,7 +4,9 @@ export interface Product {
     slug: string
     price: number
     price_promotional: number
-    img: string
+    featuredImage: string
+    gallery: [string]
+    description: string
     category_id: number
 }
 
@@ -12,7 +14,7 @@ export interface Category {
     id: number
     name: string
     slug: string
-    img: string
+    featuredImage: string
 }
 
 export interface Cart {

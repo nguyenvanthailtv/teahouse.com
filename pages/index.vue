@@ -119,7 +119,7 @@ await fetchProducts(menuActive.value)
           >
             <div class="overflow-hidden rounded-[12px] py-3">
               <img
-                :src="item.img"
+                :src="item.featuredImage"
                 :alt="item.name"
                 class="aspect-video hover-transition hover:scale-[1.1]  w-full h-auto object-cover"
               >

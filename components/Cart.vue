@@ -20,7 +20,7 @@ const removeProduct = (id: number) => {
     <ul class="cart-product max-h-[310px] overflow-auto p-[20px]">
       <li v-for="(item, index) in carts" :key="index" class="cart-product__item flex py-5">
         <div class="w-[100px] overflow-hidden mr-3">
-          <img :src="item.product.img" :alt="item.product.name">
+          <img :src="item.product.featuredImage" :alt="item.product.name">
         </div>
         <div class="flex-1 relative">
           <h6 class="text-[14px]">

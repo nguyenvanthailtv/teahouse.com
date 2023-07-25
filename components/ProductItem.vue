@@ -27,7 +27,7 @@ const addProduct = (product: Product) => {
         class="w-full h-full absolute"
       >
         <img
-          :src="product.img"
+          :src="product.featuredImage"
           :alt="product.name"
           class="w-full h-full hover-transition hover:scale-[1.1] cursor-pointer object-cover z-0"
         >

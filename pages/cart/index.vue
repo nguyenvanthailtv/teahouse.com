@@ -1,5 +1,7 @@
 <script lang="ts" setup>
+import { ref } from 'vue'
 import { storeToRefs } from 'pinia'
+import undeveloped from '@/components/popup/undeveloped.vue'
 import { Product } from 'types'
 const cartStore = useCartStore()
 const { carts } = storeToRefs(cartStore)
@@ -14,6 +16,9 @@ const reduceProduct = (id: number) => {
 const removeProduct = (id: number) => {
   cartStore.removeProduct(id)
 }
+
+const openPopup = ref(false)
+
 </script>
 <template>
   <main class="container mx-auto">
@@ -25,7 +30,7 @@ const removeProduct = (id: number) => {
         <li v-for="(item, index) in carts" :key="index" class="cart-product__item flex py-5">
           <div class="flex-1 flex">
             <div class="w-[100px] overflow-hidden lg:mr-10">
-              <img :src="item.product.img" :alt="item.product.name">
+              <img :src="item.product.featuredImage" :alt="item.product.name">
             </div>
             <div class="flex justify-center flex-col">
               <h6>
@@ -135,7 +140,7 @@ const removeProduct = (id: number) => {
               ><path d="M12,9.059V6.5c0-0.256-0.098-0.512-0.293-0.708C11.512,5.597,11.256,5.5,11,5.5s-0.512,0.097-0.707,0.292L4,12l6.293,6.207  C10.488,18.402,10.744,18.5,11,18.5s0.512-0.098,0.707-0.293S12,17.755,12,17.5v-2.489c2.75,0.068,5.755,0.566,8,3.989v-1  C20,13.367,16.5,9.557,12,9.059z" /></svg>
               Tiếp tục mua hàng
             </nuxt-link>
-            <nuxt-link to="/category/" class="btn-2 justify-center">
+            <nuxt-link class="btn-2 justify-center" @click="openPopup = true">
               <svg
                 style="enable-background:new 0 0 24 24;"
                 version="1.1"
@@ -148,6 +153,7 @@ const removeProduct = (id: number) => {
               ><g id="info" /><g id="icons"><path id="check" d="M10,18c-0.5,0-1-0.2-1.4-0.6l-4-4c-0.8-0.8-0.8-2,0-2.8c0.8-0.8,2.1-0.8,2.8,0l2.6,2.6l6.6-6.6   c0.8-0.8,2-0.8,2.8,0c0.8,0.8,0.8,2,0,2.8l-8,8C11,17.8,10.5,18,10,18z" /></g></svg>
               Tiến hành thanh toán
             </nuxt-link>
+            <undeveloped :open="openPopup" @close="openPopup = false" />
           </div>
         </div>
       </div>
