@@ -10,7 +10,7 @@ const props = defineProps({
 })
 const product = computed(() => props.product)
 const addProduct = (product: Product) => {
-  cartStore.addProduct(product)
+  cartStore.addProduct(product, 1)
 }
 </script>
 <template>

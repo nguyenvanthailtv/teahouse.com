@@ -2,16 +2,16 @@
 import { ref } from 'vue'
 import { storeToRefs } from 'pinia'
 import undeveloped from '@/components/popup/undeveloped.vue'
-import { Product } from 'types'
+// import { Product } from 'types'
 const cartStore = useCartStore()
 const { carts } = storeToRefs(cartStore)
 
-const addProduct = (product: Product) => {
-  cartStore.addProduct(product)
+const increase = (id: number) => {
+  cartStore.increase(id)
 }
 
-const reduceProduct = (id: number) => {
-  cartStore.reduceProduct(id)
+const reduce = (id: number) => {
+  cartStore.reduce(id)
 }
 const removeProduct = (id: number) => {
   cartStore.removeProduct(id)
@@ -43,7 +43,7 @@ const openPopup = ref(false)
           <div class="flex-1 hidden lg:flex items-center justify-between">
             <div class="w-[120px] py-2 relative text-center border-[1px] border-[#e1e1e1]">
               {{ item.quantity }}
-              <button class="absolute right-2 top-[50%] translate-y-[-50%] rounded-[50%] border-[1px] bg-secondary" @click="addProduct(item.product)">
+              <button class="absolute right-2 top-[50%] translate-y-[-50%] rounded-[50%] border-[1px] bg-secondary" @click="increase(item.product.id)">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -55,7 +55,7 @@ const openPopup = ref(false)
                   <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
                 </svg>
               </button>
-              <button class="absolute left-2 top-[50%] translate-y-[-50%] rounded-[50%] border-[1px] bg-secondary" @click="reduceProduct(item.product.id)">
+              <button class="absolute left-2 top-[50%] translate-y-[-50%] rounded-[50%] border-[1px] bg-secondary" @click="reduce(item.product.id)">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -89,7 +89,7 @@ const openPopup = ref(false)
           <div class="w-[120px] flex lg:hidden flex-col justify-center items-center">
             <div class="w-full py-2 relative text-center border-[1px] border-[#e1e1e1]">
               {{ item.quantity }}
-              <button class="absolute right-2 top-[50%] translate-y-[-50%] rounded-[50%] border-[1px] bg-secondary" @click="addProduct(item.product)">
+              <button class="absolute right-2 top-[50%] translate-y-[-50%] rounded-[50%] border-[1px] bg-secondary" @click="increase(item.product.id)">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -101,7 +101,7 @@ const openPopup = ref(false)
                   <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
                 </svg>
               </button>
-              <button class="absolute left-2 top-[50%] translate-y-[-50%] rounded-[50%] border-[1px] bg-secondary" @click="reduceProduct(item.product.id)">
+              <button class="absolute left-2 top-[50%] translate-y-[-50%] rounded-[50%] border-[1px] bg-secondary" @click="reduce(item.product.id)">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"

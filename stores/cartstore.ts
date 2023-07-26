@@ -8,22 +8,29 @@ export const useCartStore = defineStore('cartStore', {
     carts: []
   } as State),
   actions: {
-    addProduct (product: Product) {
-      const item = this.carts.find(item => item.product.id === product.id)
-      if (!item) {
-        this.carts.push({ product, quantity: 1, total: product.price_promotional ? product.price_promotional * 1 : product.price * 1 })
-      } else {
+    increase (id:number) {
+      const item = this.carts.find(item => item.product.id === id)
+      if (item) {
         item.quantity += 1
         item.total = item.total + (item.product.price_promotional ? item.product.price_promotional : item.product.price)
       }
     },
-    reduceProduct (id: number) {
+    reduce (id: number) {
       const item = this.carts.find(item => item.product.id === id)
       if (item) {
         if (item.quantity > 1) {
           item.quantity -= 1
           item.total = item.total - (item.product.price_promotional ? item.product.price_promotional : item.product.price)
         }
+      }
+    },
+    addProduct (product: Product, quantity: number) {
+      const item = this.carts.find(item => item.product.id === product.id)
+      if (item) {
+        item.quantity = quantity
+        item.total = item.product.price_promotional ? item.product.price_promotional * quantity : item.product.price * quantity
+      } else {
+        this.carts.push({ product, quantity, total: product.price_promotional ? product.price_promotional * quantity : product.price * quantity })
       }
     },
     removeProduct (id: number) {

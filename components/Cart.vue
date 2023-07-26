@@ -1,15 +1,14 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia'
-import { Product } from 'types'
 const cartStore = useCartStore()
 const { carts } = storeToRefs(cartStore)
 
-const addProduct = (product: Product) => {
-  cartStore.addProduct(product)
+const addProduct = (id: number) => {
+  cartStore.increase(id)
 }
 
 const reduceProduct = (id: number) => {
-  cartStore.reduceProduct(id)
+  cartStore.reduce(id)
 }
 const removeProduct = (id: number) => {
   cartStore.removeProduct(id)
@@ -30,7 +29,7 @@ const removeProduct = (id: number) => {
           <div class="flex w-[80px] text-[14px]">
             <span class="flex-1 border-[1px] py-1 border-[#e1e1e1] border-r-[0] text-center">{{ item.quantity }}</span>
             <div class="flex flex-col">
-              <button class="border-[1px] w-5 h-4 px-[1px] border-[#e1e1e1] bg-[#e1e1e1]" @click="addProduct(item.product)">
+              <button class="border-[1px] w-5 h-4 px-[1px] border-[#e1e1e1] bg-[#e1e1e1]" @click="addProduct(item.product.id)">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"

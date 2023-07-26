@@ -132,7 +132,7 @@ const openPopup = ref(false)
             <nuxt-link to="#" class="hover-color-primary font-bold px-1 py-2 mx-3" @click="openPopup = true">
               Thực đơn
             </nuxt-link>
-            <nuxt-link to="/contact/" class="hover-color-primary font-bold px-1 py-2 mx-3" @click="openPopup = true">
+            <nuxt-link to="/contact/" class="hover-color-primary font-bold px-1 py-2 mx-3">
               Liên hệ
             </nuxt-link>
           </div>
@@ -304,7 +304,7 @@ const openPopup = ref(false)
             </nuxt-link>
           </li>
           <li>
-            <nuxt-link to="#" class="menu-mobile-item" @click="openPopup = true">
+            <nuxt-link to="/contact/" class="menu-mobile-item">
               <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.825 1024">
                 <path
                   d="M-.088 512c0-141.5 114.5-256 256-256 141.438 0 256 114.5 256 256s-114.562 256-256 256c-141.499 0-256-114.5-256-256z"
